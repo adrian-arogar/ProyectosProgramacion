@@ -128,24 +128,43 @@ public class Usuario {
 	}
 	
 	public void setNif (String nif) {
-		//assert NifValido(nif);
+		if(NifValido(nif)) {
 		this.nif = nif;
+		}
 	}
 	
-	public String getNombre() {
+	private boolean NifValido(String nif) {
+		assert nif != null;
+		return nif.matches("[0-9]{8}[ABCDEFGHJKLMNOPQRSTVW]");
+	}
+	
+		public String getNombre() {
 		return nombre;
 	}
 	
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		if(NombreValido(nombre)) {
+			this.nombre = nombre;
+			}
 	}
 	
+	private boolean NombreValido(String nombre) {
+		assert nombre != null;
+		return nombre.matches("[A-ZÑÁ][a-zñáéíóú]+ [A-ZÑÁ][a-zñáéíóú]+");
+	}
+
 	public String getApellidos() {
 		return apellidos;
 	}
 	
 	public void setApellidos(String apellidos) {
+		if(ApellidosValidos(apellidos)) {	
 		this.apellidos = apellidos;
+		}
+	}
+	
+	private boolean ApellidosValidos(String apellidos) {
+		return false;
 	}
 	
 	public String getidUsr() {
