@@ -33,7 +33,13 @@ public class SesionUsuario {
 	
 	//Apartado 3 - Constructor por defecto. Utiliza el convencional
 	public SesionUsuario() {
-		this(, "04/02/2018");
+		this(new Usuario(), "05/02/2018");
+	}
+	
+	//Constructor copia
+	public SesionUsuario(SesionUsuario sesion) {
+		usr = new Usuario(sesion.usr);
+		fecha = new String(sesion.fecha);
 	}
 	
 	public Usuario getUsr() {
