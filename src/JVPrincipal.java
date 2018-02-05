@@ -470,7 +470,10 @@ public class JVPrincipal {
 			String nif = teclado.nextLine();
 			System.out.print("Introduce clave acceso: ");
 			String clave = teclado.nextLine();
-
+			
+			Usuario aux = new Usuario();
+			aux.setClaveAcceso(clave);
+			clave = aux.getClaveAcceso();
 			// Busca usuario coincidente con las credenciales.
 			usrEnSesion = buscarUsuario(nif);
 
